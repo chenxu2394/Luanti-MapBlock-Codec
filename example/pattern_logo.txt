@@ -1,0 +1,111 @@
+# Letters in the format of (x, y, z) material
+
+# Letter L
+(0,50,0) cactus
+(1,50,0) cactus
+(2,50,0) cactus
+(3,50,0) cactus
+(4,50,0) cactus
+
+(0,50,1) cactus
+
+(0,50,2) cactus
+
+(0,50,3) cactus
+
+(0,50,4) cactus
+
+(0,50,5) cactus
+
+(0,50,6) cactus
+
+# Letter u
+(7,50,0) dirt
+(8,50,0) dirt
+(9,50,0) dirt
+(10,50,0) dirt
+
+(6,50,1) dirt
+(10,50,1) dirt
+
+(6,50,2) dirt
+(10,50,2) dirt
+
+(6,50,3) dirt
+(10,50,3) dirt
+
+(6,50,4) dirt
+(10,50,4) dirt
+
+# Letter a
+(13,50,0) cobble
+(14,50,0) cobble
+(15,50,0) cobble
+(16,50,0) cobble
+
+(12,50,1) cobble
+(16,50,1) cobble
+
+(12,50,2) cobble
+(16,50,2) cobble
+
+(12,50,3) cobble
+(16,50,3) cobble
+
+(13,50,4) cobble
+(14,50,4) cobble
+(15,50,4) cobble
+(16,50,4) cobble
+
+# Letter n
+(18,50,0) cactus
+(22,50,0) cactus
+
+(18,50,1) cactus
+(22,50,1) cactus
+
+(18,50,2) cactus
+(22,50,2) cactus
+
+(18,50,3) cactus
+(22,50,3) cactus
+
+(18,50,4) cactus
+(19,50,4) cactus
+(20,50,4) cactus
+(21,50,4) cactus
+
+# Letter t
+(26,50,0) dirt
+(27,50,0) dirt
+
+(25,50,1) dirt
+
+(25,50,2) dirt
+
+(25,50,3) dirt
+
+(24,50,4) dirt
+(25,50,4) dirt
+(26,50,4) dirt
+(27,50,4) dirt
+
+(25,50,5) dirt
+
+(25,50,6) dirt
+
+# Letter i
+(30,50,0) cobble
+(31,50,0) cobble
+(32,50,0) cobble
+
+(31,50,1) cobble
+
+(31,50,2) cobble
+
+(31,50,3) cobble
+
+(30,50,4) cobble
+(31,50,4) cobble
+
+(31,50,6) cobble
