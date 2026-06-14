@@ -39,12 +39,10 @@ The following steps show how to use the example script to generate a `map.sqlite
 git clone https://github.com/chenxu2394/Luanti-MapBlock-Codec.git
 cd Luanti-MapBlock-Codec
 
-uv python install 3.10.13
-uv venv --seed
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-uv pip sync uv.lock
-uv pip install -e .
+uv sync
 ```
+
+If uv cannot find Python 3.10.13, run `uv python install 3.10.13` and retry `uv sync`.
 
 ### **The Pattern File**
 
@@ -74,18 +72,42 @@ For example:
 
 ```bash
 cd example
-python createMapSqlite.py
+uv run python createMapSqlite.py
+cd ..
 ```
 
-The script reads `pattern_logo.txt`, groups the nodes by their respective MapBlocks, encodes each MapBlock individually, and creates `map.sqlite` in the same directory.
+The script reads `pattern_logo.txt`, groups the nodes by their respective MapBlocks, encodes each MapBlock individually, and creates `example/map.sqlite`.
 
-### **Load into Minetest**
+### **Load into Luanti**
 
-0. Open Luanti and install the `Minetest Game`
-1. Create a new _singlenode_ world.
-2. Overwrite the world’s `map.sqlite` with the generated file:
-   `cp example/map.sqlite /path/to/minetest/worlds/<world_name>/map.sqlite`
-3. Start the world. The Luanti logo appears at the spawn point (one may want to set the `fly` privilege as shown [in this repo](https://github.com/chenxu2394/liblsqecc-minetest?tab=readme-ov-file#32-locate-and-modify-the-minetestconf-file)).
+1. Open Luanti, install or enable the `Minetest Game`, and create a new _singlenode_ world.
+
+   ![Create a singlenode world in Luanti](docs/images/create-singlenode-world.gif)
+
+2. Close the world, then overwrite its `map.sqlite` with the generated file:
+
+   ```bash
+   cp example/map.sqlite /path/to/minetest/worlds/<world_name>/map.sqlite
+   ```
+
+   ![Copy over the map db](docs/images/map.png)
+
+3. Optional: enable flying before starting the world. On macOS, `minetest.conf` is usually located at `~/Library/Application Support/minetest/minetest.conf`; other installs keep it in the Luanti/Minetest user-data directory. Add or update:
+
+   ![Enable fly privilege and freeze time in minetest.conf](docs/images/minetest-conf.png)
+
+   ```conf
+   #    The privileges that new users automatically get.
+   #    See /privs in game for a full list on your server and mod configuration.
+   #    type: string
+   default_privs = interact, shout, privs, basic_privs, fly
+
+   time_speed = 0
+   ```
+
+4. Start the world. The Luanti logo appears near the spawn point.
+
+![Luanti logo in the generated world](demo.png)
 
 ### **Custom patterns**
 
